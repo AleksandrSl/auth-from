@@ -161,6 +161,8 @@ textarea:focus {
 }
 
 /* Someone wants to know whether password was forgotten? */
+.forget-password-link,
+.forget-password-link:link,
 .forget-password-link:visited {
     color: currentColor;
 }
