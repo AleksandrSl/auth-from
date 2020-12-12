@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Authentication form</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body class="login-page">
+<button class="toggle-ui-mode-btn"
+        id="light-mode-btn"
+        style="display: none;"
+>
+    <img class="toggle-ui-mode-btn"
+         src="sun.svg" alt="light mode icon">
+</button>
+<button
+        class="toggle-ui-mode-btn"
+        id="dark-mode-btn"
+        style="display: none;">
+    <img class="toggle-ui-mode-btn"
+         src="night.svg" alt="dark mode icon">
+</button>
+
+
+<form class="login-form">
+    <div class="login-form__field">
+        <label for="email-input">
+            Email
+        </label>
+        <div class="login-form__input-container">
+            <input
+                    autofocus
+                    id="email-input"
+                    type="email"
+                    autocomplete="username"
+                    required
+                    class="login-form__input"
+                    name="email"
+            />
+            <div class="input__border"></div>
+        </div>
+    </div>
+    <div class="login-form__field">
+        <label for="password-input">
+            Password
+        </label>
+        <div class="login-form__input-container">
+            <input
+                    id="password-input"
+                    required
+                    type="password"
+                    autocomplete="current-password"
+                    class="login-form__input"
+                    name="password"
+            />
+            <div class="input__border"></div>
+
+            <button id="show-password-btn"
+                    type="button"
+                    class="toggle-password-visibility-btn"
+                    aria-label="Show password as text"
+                    style="display: none;"
+            >
+                <img class="toggle-password-visibility-btn__icon"
+                     src="visibile.svg" alt="visible icon">
+            </button>
+            <button id="hide-password-btn"
+                    type="button"
+                    class="toggle-password-visibility-btn"
+                    aria-label="Hide password"
+                    style="display: none"
+            >
+                <img class="toggle-password-visibility-btn__icon"
+                     src="invisibile.svg" alt="invisible icon"
+                >
+            </button>
+        </div>
+    </div>
+    <button
+            type="submit"
+            class="login-form__btn mb-2 mt-1"
+    >
+        Login
+    </button>
+    <a class="forget-password-link" href="#">Forgot password?</a>
+</form>
+</body>
+<script>
+    // By design if js in disabled, there is no need to show toggle visibility button. Assume that form will work without js.
+    var showPasswordBtn = document.querySelector("#show-password-btn")
+    var hidePasswordBtn = document.querySelector("#hide-password-btn")
+    var passwordInput = document.querySelector("#password-input")
+    showPasswordBtn.style.display = "inline-block"
+    showPasswordBtn.addEventListener("click", function () {
+        hidePasswordBtn.style.display = "inline-block"
+        showPasswordBtn.style.display = "none"
+        passwordInput.setAttribute("type", "text")
+    })
+    hidePasswordBtn.addEventListener("click", function () {
+        showPasswordBtn.style.display = "inline-block"
+        hidePasswordBtn.style.display = "none"
+        passwordInput.setAttribute("type", "password")
+    })
+
+    var darkModeBtn = document.querySelector("#dark-mode-btn")
+    var lightModeBtn = document.querySelector("#light-mode-btn")
+    darkModeBtn.style.display = "inline-block"
+    darkModeBtn.addEventListener("click", function () {
+        lightModeBtn.style.display = "inline-block"
+        darkModeBtn.style.display = "none"
+        document.documentElement.setAttribute("data-theme", "dark")
+    })
+    lightModeBtn.addEventListener("click", function () {
+        darkModeBtn.style.display = "inline-block"
+        lightModeBtn.style.display = "none"
+        document.documentElement.setAttribute("data-theme", "light")
+    })
+</script>
+</html>
