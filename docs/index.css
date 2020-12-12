@@ -131,7 +131,7 @@ textarea:focus {
 .login-form__btn {
     width: 100%;
     background-color: #217645;
-    color: white;
+    color: ghostwhite;
     min-width: 6.4em;
     min-height: 2.6em;
     padding: 0 1.1em;
@@ -141,8 +141,10 @@ textarea:focus {
     border-radius: 4px;
 }
 
+.toggle-ui-mode-btn:focus,
+.toggle-password-visibility-btn:focus,
 .login-form__btn:focus {
-    border: 2px solid black;
+    outline: 2px solid black;
 }
 
 .login-form__btn:disabled {
@@ -173,6 +175,7 @@ textarea:focus {
     right: 1rem;
     top: 1rem;
     width: 4rem;
+    height: 4rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -188,6 +191,11 @@ textarea:focus {
     .login-form {
         background-color: #092012;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(0, 0, 0, 0.1), 0 2px 24px rgba(0, 0, 0, 0.1), 0 2px 38px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-ui-mode-btn:focus,
+    .login-form__btn:focus {
+        outline: 2px solid ghostwhite;
     }
 }
 
@@ -205,6 +213,11 @@ html[data-theme='dark'] .login-form {
 }
 
 
+html[data-theme='dark'] .toggle-ui-mode-btn:focus,
+html[data-theme='dark'] .login-form__btn:focus {
+    outline: 2px solid ghostwhite;
+}
+
 html[data-theme='light'] .login-page {
     background-color: #F9FBE7;
     color: #1a1a1a;
@@ -216,6 +229,11 @@ html[data-theme='light'] .login-form__input:focus ~ .input__border {
 
 html[data-theme='light'] .login-form {
     background-color: white;
+}
+
+html[data-theme='light'] .toggle-ui-mode-btn:focus,
+html[data-theme='light'] .login-form__btn:focus {
+    outline: 2px solid black;
 }
 
 .mb-2 {
