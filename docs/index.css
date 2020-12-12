@@ -80,15 +80,16 @@ textarea:focus {
     align-items: center;
     justify-content: center;
     background-color: #F9FBE7;
+    color: #1a1a1a;
 }
 
 .login-form {
     font-size: 2rem;
     text-align: center;
-    background-color: white;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.03), 0 2px 12px rgba(0, 0, 0, 0.01);
     padding: 3rem 3rem 2rem;
     border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.03), 0 2px 12px rgba(0, 0, 0, 0.01);
 }
 
 .login-form__field {
@@ -109,7 +110,7 @@ textarea:focus {
     border: none;
     border-radius: 4px;
     background-color: transparent;
-    color: hsl(0, 0%, 10%);
+    color: #1a1a1a;
 }
 
 .input__border {
@@ -176,7 +177,7 @@ textarea:focus {
 
 @media (prefers-color-scheme: dark) {
     .login-page {
-        background-color: #1f1f1f;
+        background-color: #06140c;
         color: ghostwhite;
     }
 
@@ -185,13 +186,13 @@ textarea:focus {
     }
 
     .login-form {
-        background-color: hsl(145, 56%, 8%);
+        background-color: #092012;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(0, 0, 0, 0.1), 0 2px 24px rgba(0, 0, 0, 0.1), 0 2px 38px rgba(0, 0, 0, 0.1);
     }
 }
 
 html[data-theme='dark'] .login-page {
-    background-color: hsl(145, 56%, 5%);
+    background-color: #06140c;
     color: ghostwhite;
 }
 
@@ -200,8 +201,21 @@ html[data-theme='dark'] .login-form__input:focus ~ .input__border {
 }
 
 html[data-theme='dark'] .login-form {
-    background-color: hsl(145, 56%, 8%);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 2px 12px rgba(0, 0, 0, 0.1), 0 2px 24px rgba(0, 0, 0, 0.1), 0 2px 38px rgba(0, 0, 0, 0.1);
+    background-color: #092012;
+}
+
+
+html[data-theme='light'] .login-page {
+    background-color: #F9FBE7;
+    color: #1a1a1a;
+}
+
+html[data-theme='light'] .login-form__input:focus ~ .input__border {
+    border-width: 2px;
+}
+
+html[data-theme='light'] .login-form {
+    background-color: white;
 }
 
 .mb-2 {
