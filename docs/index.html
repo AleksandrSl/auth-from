@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -105,7 +105,12 @@
 
     var darkModeBtn = document.querySelector("#dark-mode-btn")
     var lightModeBtn = document.querySelector("#light-mode-btn")
-    darkModeBtn.style.display = "inline-block"
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        lightModeBtn.style.display = "inline-block"
+    } else {
+        darkModeBtn.style.display = "inline-block"
+    }
     darkModeBtn.addEventListener("click", function () {
         lightModeBtn.style.display = "inline-block"
         darkModeBtn.style.display = "none"
